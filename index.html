@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>#Election Book</title>
+		<title>ElectionBook</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -14,6 +14,43 @@
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
+		<style>
+			figure { display: block; background: #eee; padding: 30px; }
+			figcaption { display: block; text-align: center; margin: 10px; text-style: bold; color: black;}
+		</style>
+		<script>
+		$(function() {
+    
+		var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
+		$fluidEl = $("figure");
+	    	
+		$allVideos.each(function() {
+	
+		$(this)
+	    // jQuery .data does not work on object/embed elements
+	    .attr('data-aspectRatio', this.height / this.width)
+	    .removeAttr('height')
+	    .removeAttr('width');
+	
+		});
+	
+		$(window).resize(function() {
+	
+		var newWidth = $fluidEl.width();
+		$allVideos.each(function() {
+	  
+			var $el = $(this);
+			$el
+				.width(newWidth)
+				.height(newWidth * $el.attr('data-aspectRatio'));
+	  
+				});
+	
+			}).resize();
+
+		});
+</script>
+		
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
@@ -28,10 +65,10 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro">#PledgeToVote</a></li>
-							<li><a href="#one">#Inspirations</a></li>
-							<li><a href="#two">#Candidates</a></li>
-							<li><a href="#work">#Wiki</a></li>
-							<li><a href="#contact">#Contact</a></li>
+							<li><a href="#one">Inspirations</a></li>
+							<li><a href="#two">Candidates</a></li>
+							<li><a href="#work">Wiki</a></li>
+							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -53,23 +90,19 @@
 			</section>
 		
 		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>What I Do</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-					id varius justo euismod in. Curabitur egestas consectetur magna urna.</p>
-				</div>
+			<section id="one" class="main style2  dark primary">
+			<figure>
+				<figcaption><strong>Satyamev Jayate</strong></figcaption>
+				<iframe width="400" height="300" src="http://www.youtube.com/embed/zwRK4oL4O60" frameborder="10" allowfullscreen></iframe>				
+				<figcaption>Episode 05 : <strong>Criminalization Of Politics</strong></figcaption>
+			</figure>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
-		
 		<!-- Two -->
 			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
+				<div class="content box">
 					<header>
-						<h2>Who I Am</h2>
+						<h2>Candidates</h2>
 					</header>
 					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
 					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
@@ -82,7 +115,7 @@
 			<section id="work" class="main style3 primary">
 				<div class="content container">
 					<header>
-						<h2>My Work</h2>
+						<h2>Wiki</h2>
 						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
 						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis 
 						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae urna.</p>
