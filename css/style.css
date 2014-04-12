@@ -1165,7 +1165,8 @@
 /*********************************************************************************/
 
 	#contact {
-		background: #8588DE;
+		background: url('images/overlay.png'), url('../images/one.jpg');
+		background-size: 256px 256px, cover;
 		padding-bottom: 10;
 		overflow: hidden;
 	}
