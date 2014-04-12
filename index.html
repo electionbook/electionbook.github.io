@@ -15,13 +15,13 @@
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<style>
-			figure { display: block; background: #eee; padding: 30px; }
+			figure { display: block; background: #eee; padding: 10px; }
 			figcaption { display: block; text-align: center; margin: 10px; text-style: bold; color: black;}
 		</style>
 		<script>
 		$(function() {
     
-		var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
+		var $allVideos = $("iframe[src^='https://india-election2014.appspot.com'], iframe[src^='http://www.youtube.com'], object, embed"),
 		$fluidEl = $("figure");
 	    	
 		$allVideos.each(function() {
@@ -49,7 +49,7 @@
 			}).resize();
 
 		});
-</script>
+		</script>
 		
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -64,11 +64,11 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro">#PledgeToVote</a></li>
+							<li><a href="#intro">Home</a></li>
+							<li><a href="#contact">#PledgeToVote</a></li>
 							<li><a href="#one">Inspirations</a></li>
 							<li><a href="#two">Candidates</a></li>
 							<li><a href="#work">Wiki</a></li>
-							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
 			</header>
@@ -76,33 +76,21 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container small">
 					<header>
-					<script src="js/jquery-pretty-1.6.1.min.js" type="text/javascript"></script>
-					<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-					<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
-					<script type="text/javascript" charset="utf-8">
-					$(document).ready(function () {
-					$(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({
-					animation_speed: 'normal',
-					theme: 'light_square',
-					slideshow: 3000,
-					postion: 'relative',
-					autoplay_slideshow: false
-						});
-					});
-					</script>
-		
-					<div class="gallery clearfix">
-						<h2><a href="https://india-election2014.appspot.com/?hl=en&amp;iframe=true&amp;width=80%&amp;height=90%" rel="prettyPhoto">#PledgeToVote</a></h2>
-					</div>
+						<h2><a href="#contact">#PledgeToVote</a></h2>
 					</header>
-					
-					</br>
-					</br>
 					<p>Thanks to <strong>Google India</strong> for taking such a wonderful initiative</p>
 					<footer>
-						<a href="#one" class="button style2 down">More</a>
+						<a href="#contact" class="button style2 down">More</a>
 					</footer>
 				</div>
+			</section>
+		<!-- Pledge -->
+			<section id="contact" class="main style2  dark primary">
+				<figure>
+					<figcaption>Thanks to <strong>Google India</strong> for taking such a wonderful initiative</figcaption>
+					<iframe width="1280" height="500" src="https://india-election2014.appspot.com" frameborder="0" ></iframe>				
+				</figure>	
+					<a href="#one" class="button style2 down anchored">Next</a>
 			</section>	
 		<!-- One -->
 			<section id="one" class="main style2  dark primary">
